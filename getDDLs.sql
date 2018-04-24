@@ -1,0 +1,5 @@
+
+
+SELECT  DBMS_METADATA.GET_DDL('TABLE', u.table_name) || ';'
+FROM    USER_TABLES u
+WHERE   SUBSTR(TABLE_NAME,1,2) = 'CT'
