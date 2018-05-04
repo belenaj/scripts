@@ -19,7 +19,7 @@ build/
 
 # Intellij
 *.iml
-*.idea/*.xml
+*/.idea/**/*.xml
 
 
 # Secrets
