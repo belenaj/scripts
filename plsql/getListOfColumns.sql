@@ -17,22 +17,26 @@ DECLARE
   l_cOut        CLOB;
   l_vtimestamp  VARCHAR2(100) := TO_CHAR(SYSTIMESTAMP, 'YYYYMMDD_HH24MISS');
   l_vTableName  VARCHAR2(100) := '';
+  l_vSchema     VARCHAR2(100) := '';
  
 BEGIN
 
-  l_vTableName := '';
+  l_vTableName  := '';
+  l_vSchema     := '';
     
   SELECT 
     RTRIM(XMLAGG(XMLELEMENT(E, column_name,', ')
     .EXTRACT('//text()') ORDER BY column_id)
     .GetClobVal(),',')  
   INTO l_cOut
-  FROM (
+  FROM(
     SELECT 
       column_name,
       column_id
     FROM  ALL_TAB_COLUMNS
-    WHERE TABLE_NAME = l_vTableName
+    WHERE 1=1
+          AND TABLE_NAME = l_vTableName 
+          AND OWNER      = l_vSchema
   ) s;
   
   -- removes last comma and new line char

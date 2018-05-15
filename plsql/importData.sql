@@ -13,7 +13,7 @@ JOIN (
   FROM (
     SELECT table_name, column_name, column_id
     FROM ALL_TAB_COLUMNS
-    WHERE SUBSTR(TABLE_NAME,1,2) =  'CT'
+    WHERE SUBSTR(TABLE_NAME,1,1) =  'X'
   )
   GROUP BY
    table_name
