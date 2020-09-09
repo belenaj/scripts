@@ -16,4 +16,4 @@ Learn how to use the scripts by reading and understanding the proper section.
 
 Jorge Belena
 
-[https://github.com/jbelenag](https://github.com/jbelenag/)
+[https://github.com/belenaj](https://github.com/belenaj/)
